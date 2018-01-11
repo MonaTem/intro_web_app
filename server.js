@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 // DB connection
-
+const knex = require('./db.js');
 // GET BIRDS
 app.get('/birds', (req, res) => {
 
