@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Add Bootstrap CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+  <!-- Add site styling -->
+  <link rel="stylesheet" href="/stylesheets/site.css">
+
+
+
+  <title>Birdy</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron">
+      <h1>All Birds</h1>
+
+      <!-- New Bird Form -->
+      <form id="newBirdForm" action="/birds" method="post">
+        <div>
+          <input id="title" type="text" name="title" />
+        </div>
+        <div>
+          <textarea id="description" name="description" rows="8" cols="80"></textarea>
+        </div>
+
+        <button>Save</button>
+      </form>
+
+      <div id="birds">
+        <% birds.forEach((bird) => { %>
+          <div>
+            <h2> <%= bird.title %> </h2>
+            <p>
+              <%= bird.description %>
+            </p>
+          </div>
+          <% }); %>
+      </div>
+    </div>
+  </div>
+  <!-- Axios -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!-- Add sitejs -->
+  <script src="/javascripts/birds.js" charset="utf-8"></script>
+
+</body>
+
+</html>
